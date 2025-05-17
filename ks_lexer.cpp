@@ -6,11 +6,13 @@ Lexer::Lexer(const std::string& src) : source(src), pos(0), line(1), column(1) {
 
 std::string token_type_to_string(TokenType type);
 
+extern bool debug_mode;
+
 char Lexer::peek() {
     return is_at_end() ? '\0' : source[pos];
 }
 char Lexer::peek_next() {
-    return (pos + 1 < source.length()) ? source[pos + 1] : '\0';
+    return (pos + 1 < source.length()) ? '\0' : source[pos + 1];
 }
 
 char Lexer::advance() {
@@ -87,8 +89,18 @@ Token Lexer::make_string() {
     return {TokenType::STRING, value, start_line, start_column};
 }
 
+void print_token(const Token& token) {
+    extern bool debug_mode;
+    if (!debug_mode) return;
+
+    std::cout << "Token(" << (int)token.type << ", '" << token.value
+              << "', line: " << token.line << ", col: " << token.column << ")\n";
+}
+
+
 std::vector<Token> Lexer::tokenize() {
     std::vector<Token> tokens;
+
     while (!is_at_end()) {
         skip_whitespace();
         skip_comment();
@@ -98,12 +110,21 @@ std::vector<Token> Lexer::tokenize() {
         char c = peek();
 
         if (std::isalpha(c)) {
-            tokens.push_back(make_identifier_or_keyword());
-        } else if (std::isdigit(c)) {
-            tokens.push_back(make_number());
-        } else if (c == '\'' || c == '"') {
-            tokens.push_back(make_string());
-        } else if (std::string("=:+-*/<>!").find(c) != std::string::npos) {
+            auto token = make_identifier_or_keyword();
+            print_token(token);
+            tokens.push_back(token);
+        }
+        else if (std::isdigit(c)) {
+            auto token = make_number();
+            print_token(token);
+            tokens.push_back(token);
+        }
+        else if (c == '\'' || c == '"') {
+            auto token = make_string();
+            print_token(token);
+            tokens.push_back(token);
+        }
+        else if (std::string("=:+-*/<>!").find(c) != std::string::npos) {
             int start_line = line;
             int start_column = column;
 
@@ -116,28 +137,32 @@ std::vector<Token> Lexer::tokenize() {
                 (op == "<" && next == '=') ||
                 (op == ">" && next == '=') ||
                 (op == "!" && next == '=')) {
-                op += advance(); 
+                op += advance();
             }
-                tokens.push_back({TokenType::OPERATOR, op, start_line, start_column});
-        } else if (c == '\n') {
+
+            Token token = {TokenType::OPERATOR, op, start_line, start_column};
+            print_token(token);
+            tokens.push_back(token);
+        }
+        else if (c == '\n') {
             int start_line = line;
             int start_column = column;
             advance();
-            tokens.push_back({TokenType::END_OF_LINE, "\\n", start_line, start_column});
-        } else {
+            Token token = {TokenType::END_OF_LINE, "\\n", start_line, start_column};
+            print_token(token);
+            tokens.push_back(token);
+        }
+        else {
             int start_line = line;
             int start_column = column;
-            tokens.push_back({TokenType::UNKNOWN, std::string(1, advance()), start_line, start_column});
+            Token token = {TokenType::UNKNOWN, std::string(1, advance()), start_line, start_column};
+            print_token(token);
+            tokens.push_back(token);
         }
     }
+
     return tokens;
 }
 
 
-void print_tokens(const std::vector<Token>& tokens) {
-    for (const auto& t : tokens) {
-        std::cout << "Token(" << static_cast<int>(t.type) << ", '" << t.value
-        << "', line: " << t.line << ", col: " << t.column << ")\n";
-        
-    }
-}
+

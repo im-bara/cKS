@@ -38,22 +38,19 @@ std::any Evaluator::eval_node(const AST& node) {
         return {};
     }
 
-    if (auto fn = dynamic_cast<FunctionNode*>(node.get())) {
-        functions[fn->name] = fn;
+    if (auto func = dynamic_cast<FunctionNode*>(node.get())) {
+        env.define_func(func->name, func);
         return {};
     }
 
     if (auto call = dynamic_cast<CallNode*>(node.get())) {
-        if (functions.find(call->func_name) == functions.end()) {
-            throw std::runtime_error("Function not defined: " + call->func_name);
-        }
-
-        FunctionNode* fn = functions[call->func_name];
-        for (const auto& stmt : fn->body) {
+        FunctionNode* func = env.get_func(call->func_name);
+        for (const auto& stmt : func->body) {
             eval_node(stmt);
         }
         return {};
     }
+
 
     if (auto bin = dynamic_cast<BinaryOpNode*>(node.get())) {
         auto left = eval_node(bin->left);
@@ -62,6 +59,7 @@ std::any Evaluator::eval_node(const AST& node) {
         if (left.type() == typeid(int) && right.type() == typeid(int)) {
             int l = std::any_cast<int>(left);
             int r = std::any_cast<int>(right);
+            
 
            switch (bin->op) {
             case BinaryOpType::ADD: return l + r;
@@ -84,13 +82,21 @@ std::any Evaluator::eval_node(const AST& node) {
 
     if (auto ifnode = dynamic_cast<IfNode*>(node.get())) {
         auto cond = eval_node(ifnode->condition);
-        if(cond.type() == typeid(int) && std::any_cast<int>(cond)) {
-            for (const auto& stmt : ifnode->body) {
-                eval_node(stmt);
+
+
+        if ((cond.type() == typeid(int) && std::any_cast<int>(cond)) ||
+        (cond.type() == typeid(bool) && std::any_cast<bool>(cond))) {
+
+        for (const auto& stmt : ifnode->body) {
+            eval_node(stmt);
             }
+        } else {
+            std::cout << "[DEBUG] If block skipped\n";
         }
         return {};
     }
+
+
 
     if (auto whileNode = dynamic_cast<WhileNode*>(node.get())) {
         while (true) {

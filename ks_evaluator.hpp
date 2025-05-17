@@ -8,9 +8,11 @@
 class Environment {
     public:
     std::unordered_map<std::string, std::any> variables;
+    std::unordered_map<std::string, FunctionNode*> functions;
     void set(const std::string& name, std::any value) {
         variables[name] = value;
     }
+    
 
     std::any get(const std::string& name) {
         auto it = variables.find(name);
@@ -21,6 +23,17 @@ class Environment {
     bool has(const std::string& name) const {
         return variables.find(name) != variables.end();
     }
+
+    void define_func(const std::string& name, FunctionNode* func) {
+    functions[name] = func;
+    }
+
+    FunctionNode* get_func(const std::string& name) {
+        auto it = functions.find(name);
+        if (it != functions.end()) return it->second;
+        throw std::runtime_error("Function not defined: " + name);
+    }
+
 };
 
 class Evaluator {
@@ -32,6 +45,5 @@ class Evaluator {
     private:
     Environment env;
     std::any eval_node(const AST& node);
-    std::unordered_map<std::string, FunctionNode*> functions;
 
 };

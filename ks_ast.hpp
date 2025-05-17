@@ -2,7 +2,8 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <stdexcept> 
+#include <stdexcept>
+#include <iostream>
 
 
 // Base class AST
@@ -85,5 +86,7 @@ inline BinaryOpType to_binary_op(const std::string& op) {
     if (op == "/") return BinaryOpType::DIVIDE;
     if (op == "==") return BinaryOpType::EQUAL;
     if (op == "<") return BinaryOpType::LESS_THAN;
+
+    std::cerr << "[KnightScript Error] Unkown operator: " << op << "'\n";
     throw std::runtime_error("Unknown binary operator: " + op);
 }

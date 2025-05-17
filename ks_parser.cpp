@@ -64,7 +64,14 @@ AST Parser::parse_call() {
 }
 
 AST Parser::parse_expression() {
-    return parse_term();
+    auto left = parse_term();
+
+    while (!is_at_end() && (peek().value == "==" || peek().value == "<")) {
+        std::string op = advance().value;
+        auto right = parse_term();
+        left = std::make_unique<BinaryOpNode>(std::move(left), to_binary_op(op), std::move(right));
+    }
+    return left;
 }
 
 AST Parser::parse_term() {
