@@ -44,8 +44,11 @@ say Knight
 ---
 ### Grammar KnightScript
 1.**Summon** = Variabel & Assignment
+
 2.**Say** = Print
+
 3.**Func** = Function
+
 4.**Call** = Memanggil Fungsi
 
 
