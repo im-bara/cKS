@@ -56,19 +56,19 @@ say Knight
 ### FAQ ⁉️🤔
 
 ## 🤔 KnightScript Apaan?
-# KnightScript itu bahasa Pemrograman eksperimen buatan gw, dibikin dari 0 pake C++ buat belajar compiler
+KnightScript itu bahasa Pemrograman eksperimen buatan gw, dibikin dari 0 pake C++ buat belajar compiler
 ## 🤔 Kenapa namanya KnightScript?
-# Karena gw suka Tema Abad pertengahan dan seorang *Knight*
+Karena gw suka Tema Abad pertengahan dan seorang *Knight*
 ## 🤔 Bisa Kontribusi?
-# Bisa Banget kok! Fork Repo dan kirim pull Request.
-# TAPI! Harap Sertakan:
+Bisa Banget kok! Fork Repo dan kirim pull Request.
+TAPI! Harap Sertakan:
 - **Alasan perubahan**
 - **Penjelasan tentang Solusi**
 - **Contoh Implementasi** (optional)
 ## 🤔 Gw gak ngerti Compiler, pengen bantu
-# Bisa Cuy, bisa buat Rapihin Dokumentasi, test case, saran fitur, atau desain
+Bisa Cuy, bisa buat Rapihin Dokumentasi, test case, saran fitur, atau desain
 ## 🤔 Banyak bug?
-# Pake nanya, iya lah kocak. Banyak Bug, orang baru di Buat Kurang dari 7 hari. (Pertanggal 17-05-2025)
+Pake nanya, iya lah kocak. Banyak Bug, orang baru di Buat Kurang dari 7 hari. (Pertanggal 17-05-2025)
 
 ---
 ### 🥶 Kontribusi ⛓️‍💥
@@ -78,9 +78,10 @@ KnightScript sangat terbuka untuk berkolaborasi. Silahkan:
 - Commit perubahan
 - Buka Pull Request
 
-# Catatan: Harus menyertakan penjelsn kenapa sih ada perubahan harus dilakukan dan gimana lu menyelesaikan masalah/manambah nilai itu.
+Catatan: Harus menyertakan penjelsn kenapa sih ada perubahan harus dilakukan dan gimana lu menyelesaikan masalah/manambah nilai itu.
 
 ---
 ### ⚔️ Credits
-# Dikembangkan oleh: Bara sang ksatria
-# Dengan Vibes Koding. (Thanks Alot for ChatGPT, i learn so much About Lexer & Parser)
+Dikembangkan oleh: Bara sang ksatria
+Dengan Vibes Koding. (Thanks Alot for ChatGPT, i learn so much About Lexer & Parser)
+Stackoverflow, YouTube, dan Dosen Gw
