@@ -3,13 +3,15 @@
 > Bahasa pemrograman eksperimen menggunakan C++ sebagai Compiler Utama
 
 KnightScript adalah bahasa pemrograman kecil yang dikembangkan menggunakan C++ sebagai latihan untuk memahami cara kerja **lexer**, **parser**, dan **interpreter** dari nol.
+Gw terinspirasi karena gak sengaja Liat orang bikin bahasa sendiri pas gw Scroll Fesnuk di Grup malas.
+Dan Bahasa Pemograman ini terinspirasi biar mudah di Pahami kayak Python , tapi gw pengen bawa ini lebih fun lagi gak kayak belajar buat test TOEFL (AWKAWKKAW)
 
 ---
 
 ## 🚀 Fitur Utama
 
 - Keyword khusus: `summon`, `call`, `say`, dan lainnya
-- Support literal: string, number, while, if, boolean
+- Support literal: `string`, `number`, `while`, `if`, `boolean`
 - Operator dasar
 - Mudah dikembangkan dan dimodifikasi
 - Source code ringan dan terbuka
@@ -43,14 +45,19 @@ say Knight
 
 ---
 ### Grammar KnightScript
-1.**Summon** = Variabel & Assignment
+1.**Summon** : Membuat Variable Assign
 
-2.**Say** = Print
+2.**Say** : Print Output
 
-3.**Func** = Function
+3.**Func** : Mendefinisikan Function
 
-4.**Call** = Memanggil Fungsi
+4.**Call** : Memanggil Fungsi
 
+5.**If** : Percabangan
+
+6.**While** : Perulangan
+
+> Note : Mungkin bakal ada perubahan karena project masih di Kembangkan Aktif (Ver.0.0.37)
 
 ---
 ### FAQ ⁉️🤔
@@ -78,13 +85,13 @@ KnightScript sangat terbuka untuk berkolaborasi. Silahkan:
 - Commit perubahan
 - Buka Pull Request
 
-Catatan: Harus menyertakan penjelsn kenapa sih ada perubahan harus dilakukan dan gimana lu menyelesaikan masalah/manambah nilai itu.
+Catatan: Harus menyertakan penjelsn kenapa sih ada perubahan harus dilakukan dan gimana lu menyelesaikan masalah.
 
 ---
 ### ⚔️ Credits
 Dikembangkan oleh:
-- Bara sang ksatria
-- Dengan Vibes Koding. (Thanks Alot for ChatGPT, i learn so much About Lexer & Parser)
+- Bara sang Ksatria
+- Dengan Vibes Koding. *(Thanks Alot for ChatGPT, i learn so much About Lexer & Parser)*
 - Stackoverflow
 - YouTube
 - Dosen Gw
