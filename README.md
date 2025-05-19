@@ -9,7 +9,7 @@ KnightScript adalah bahasa pemrograman kecil yang dikembangkan menggunakan C++ s
 ## 🚀 Fitur Utama
 
 - Keyword khusus: `summon`, `call`, `say`, dan lainnya
-- Support literal: string, number
+- Support literal: string, number, while, if, boolean
 - Operator dasar
 - Mudah dikembangkan dan dimodifikasi
 - Source code ringan dan terbuka
@@ -82,6 +82,9 @@ Catatan: Harus menyertakan penjelsn kenapa sih ada perubahan harus dilakukan dan
 
 ---
 ### ⚔️ Credits
-Dikembangkan oleh: Bara sang ksatria
-Dengan Vibes Koding. (Thanks Alot for ChatGPT, i learn so much About Lexer & Parser)
-Stackoverflow, YouTube, dan Dosen Gw
+Dikembangkan oleh:
+- Bara sang ksatria
+- Dengan Vibes Koding. (Thanks Alot for ChatGPT, i learn so much About Lexer & Parser)
+- Stackoverflow
+- YouTube
+- Dosen Gw
