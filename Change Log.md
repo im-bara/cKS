@@ -1,74 +1,56 @@
-### Change Log
+# Change Log
 
 ---
-# 🛠️ Ver.0.0.37 (Current)
+## 🛠️ Ver.0.0.37 (Current)
 
-Issue :
+### Known Issue :
+- Statement `If` tidak bekerja dengan benar
+- Token bermasalah ketika memanggil `if`
+- `While` tidak memberikan Output. (BUGGED!?)
+- Operasi Aritmatika tidak berfungsi ketika, Operator Lebih dari Dua
 
-1.Statement <If> tidak bekerja dengan benar
+### Fixed :
+- Integer bisa bekerja dengan baik (Issue, ketika menjalankan Operasi)
+- Tidak Merespon String dengan baik. (Issue Fixed)
 
-2.Token bermasalah ketika memanggil if
+(Parser Bermasalah, karena selalu mengeluarkan Integer bukan string.)
 
-3.While, tidak memberikan Output. <BUGGED!?>
-
-4.Operasi Aritmatika tidak berfungsi ketika, Operasi Lebih dari Dua (Issue Lanjutan)
-
-Fix :
-
-1.Integer bisa bekerja dengan baik (Issue, ketika Operasi, Lihat ke Issue Nomor 4)
-
-2.Tidak Merespon String dengan baik. (Issue Fixed)
-
-(Parser Bermasalah, karena selalu mengeluarkan Integer bukan string. Penambahan beberapa Statement Parse)
-
-Feature Update :
-
-1.Token Debug (bisa di akses melalui <--debug>)
-
-(Di perlukan jika ada Token yang bermasalah)
+### Feature Update :
+- Token Debug di akses melalui `--debug` untuk mengidentifikasi Masalah Pada Token
 
 ---
-# 🛠️ Ver.0.0.38 (Skipped Update)
+## 🛠️ Ver.0.0.38 (Skipped Update)
 
-Issue :
+### Issue :
+- Statement `If` merespon `>` (lebih dari) tidak bekerja dengan benar
+- `While` memberikan keluaran, Issue lanjutan dimana Infinite Loop.
+- Issue Parser dengan respond `Func`, dimana Function tidak memberikan output
 
-1.Statement If merespon > (lebih dari) tidak bekerja dengan benar
+### Fix :
+- If Statement bisa merespon dengan baik `<` (kurang dari)
+- `Call` di perbaiki, dimana bisa di gunakan pada `if`.
 
-2.While memberikan keluaran, Issue lanjutan dimana Infinite Loop(Finally)
-
-3.Issue Parser dengan respond Function, dimana Function tidak memberikan output
-
-Fix :
-
-1.If Statement bisa merespon dengan baik < (kurang dari)
-
-2.Call statement di perbaiki, dimana bisa di gunakan pada statement if.
-
-Feature Update :
-
-1.While Loop (Bugged)
+### Feature Update :
+- While Loop (Bugged)
 
 ---
 # 🛠️ Ver.0.0.42 (Released Soon)
 
-Issue :
+### Issue :
+- Boolean Bugged
+- Penambahan Aritmatika seperti `Greater_than (>)`, `Greater_equal (>=)`, `less_than (<)`, `less_equal (<=)`.
+Tidak berfungsi dimana tidak dapat merespon dengan baik. dimana `While` tidak dapat memberikan Output
+- Dengan adanya Issue Aritmatika, Operator dasar seperti `+`, `-`, `:`, `*`, kemungkinan besar tidak dapat berfungsi
+Pada While
 
-1.Boolean Bugged
+### Fix :
 
-2.Penambahan Aritmatika seperti Greater_than (>), Greater_equal (>=), less_than (<), less_equal (<=).
+- `While` di perbaiki. (Jika menemukan issue langsung beri tahu)
 
-Tidak berfungsi dimana tidak dapat merespon dengan baik. dimana pada While tidak dapat memberikan Output
+- Ada beberapa Typo pada penulisan di `<BinaryOpNode>`, `<StatementNode>`, `<IfNode>`, `<WhileNode>`.
 
-3.Dengan adanya Issue Aritmatika, Operator dasar seperti +, -, :, *, kemungkinan besar tidak dapat berfungsi
+### Featured Update :
 
-Fix :
-
-1.While Loop di perbaiki. (Jika menemukan issue langsung beri tahu)
-
-2.Ada beberapa Typo pada penulisan di <BinaryOpNode>, <StatementNode>, <IfNode>, <WhileNode>.
-
-Featured Update :
-
-1.Boolean (Bugged)
+- `Boolean` (Bugged)
 
 ---
