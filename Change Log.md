@@ -34,7 +34,7 @@
 - While Loop (Bugged)
 
 ---
-# 🛠️ Ver.0.0.42 (Released Soon)
+# 🛠️ Ver.0.0.42 (Skipped Update)
 
 ### Issue :
 - Boolean Bugged
@@ -54,3 +54,24 @@ Pada While
 - `Boolean` (Bugged)
 
 ---
+# 🛠️ Ver.0.0.56 (Update Released Soon)
+
+### Issue :
+- `Boolean` tidak bisa menggunakan `=` , issue ditemukan di grammar tidak mendeklarasikan = dengan benar
+- `While` dimana tidak dapat merespon Call (?) 
+- `Boolean` issue ketika menjelaskan tentang `intLebihKecil < intLebihBesar` karena struktur Grammarnya hanya Menerima output String 💀 udah di perbaiki (kayak nya)
+
+### Fix :
+- Grammar di perbaiki (?) jujur 💀 gw juga baru ngeh jir, dimana Outputnya selalu String. 
+- Perbaikan grammar juga mempengaruhi beberapa struktur Abstract Syntax Tree yang harus di perbaiki.
+
+### Feature Update :
+- Else (WIP)
+- For (WIP)
+
+### Feature Goals :
+- Dimana AST langsung diubah menjadi ByteCode, Alasan karena untuk meningkatkan Performance.
+- Garbage Collection 💀 biar orang bego gak kena Memory Leak 
+- Simplifikasi & Penambahan Grammar, Alasan code sekarang Masih kayak Mie berantakan Anjir
+
+> Note semua Goals memiliki Low Priority jadi tidak akan di kerjakan lebih dulu jir. Masih pengen nambahin Fitur kayak Array, List dsb.
