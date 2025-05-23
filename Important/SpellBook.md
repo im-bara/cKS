@@ -17,7 +17,7 @@
 `say manaJajangKopling //output : 500 (int)`
 
 ---
-### If Confitions
+### If Conditions
 
 `if manaJajangKopling < 100`
 
@@ -42,3 +42,5 @@
 ### Boolean (Soon)
 
 `bool 50 != 50 //output : true (tapi bohong hayuk), output (beneran gak boong) : false lah ancrit`
+
+---
