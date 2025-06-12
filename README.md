@@ -27,7 +27,7 @@ git clone https://github.com/im-bara/cKS.git
 
 ### 2. Compile
 ```bash
-g++ knight.cpp ks_parser.cpp ks_lexer.cpp ks_evaluator.cpp -o ks
+g++ ks_parser.cpp ks_lexer.cpp ks_evaluator.cpp -o ks
 ```
 
 ### 3. Jalaninnya
